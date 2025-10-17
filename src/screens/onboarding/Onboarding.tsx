@@ -5,10 +5,14 @@ import CustomText from '@/components/CustomText'
 import CustomButton from '@/components/CustomButton'
 import { PageIndicator } from 'react-native-page-indicator'
 import GoogleSvg from '@/assets/icons/Google.svg'
-import EnvelopeSvg from '@/assets/icons/Envelope.svg'
 import Animated, { Easing, useSharedValue, withTiming } from 'react-native-reanimated'
+import { NativeStackScreenProps } from '@react-navigation/native-stack'
+import { AppStackParamList } from '@/navigation/AppNavigator'
+import EnvelopeSvg from '@/assets/icons/Envelope'
 
-export default function Onboarding() {
+type OnboardingScreenProps = NativeStackScreenProps<AppStackParamList, 'OnBoarding'>
+
+export default function Onboarding({ navigation }: OnboardingScreenProps) {
     const [currentScreen, setCurrentScreen] = useState(0);
 
     const bgTranslateX = useSharedValue<string>("0%");
@@ -25,7 +29,13 @@ export default function Onboarding() {
     const handleNext = () => {
         if (currentScreen < 3) {
             setCurrentScreen(currentScreen + 1);
+        } else {
+            navigateToSignIn();
         }
+    };
+
+    const navigateToSignIn = () => {
+        navigation.navigate('AuthStack');
     };
 
     useEffect(() => {
@@ -223,7 +233,7 @@ export default function Onboarding() {
                             Already have an account?
                         </CustomText>
                         <Pressable 
-                            onPress={() => setCurrentScreen(0)}
+                            onPress={navigateToSignIn}
                             className='ml-1'
                         >
                             <CustomText className='!text-primary font-semibold !font-manrope-semibold text-center'>

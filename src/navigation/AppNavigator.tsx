@@ -1,15 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import BootSplash from 'react-native-bootsplash'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Home from '../app/Home'
-import Onboarding from '../onboarding/Onboarding'
+import Onboarding from '../screens/onboarding/Onboarding'
+import AuthStack from './AuthStack'
 
 
 export type AppStackParamList = {
     OnBoarding: undefined;
-    App: undefined;
+    AuthStack: undefined;
 }
 
 const AppStack = createNativeStackNavigator<AppStackParamList>()
@@ -38,19 +38,20 @@ export default function AppNavigator() {
     }, []);
 
     return (
-        <AppStack.Navigator>
+        <AppStack.Navigator
+            screenOptions={{
+                headerShown: false
+            }}
+        >
             {
                 true && (
                     <AppStack.Screen
                         name="OnBoarding"
                         component={Onboarding}
-                        options={{
-                            headerShown: false
-                        }}
                     />
                 )
             }
-            <AppStack.Screen name="App" component={Home} />
+            <AppStack.Screen name="AuthStack" component={AuthStack} />
         </AppStack.Navigator>
     )
 }

@@ -28,7 +28,14 @@ module.exports = {
         'nunito-sans-semibold-italic': "NunitoSans-SemiBoldItalic",
       },
       colors: {
-        primary: "#D3862A"
+        primary: "#D3862A",
+        grey: {
+          100: "#111111",
+          80: "#50555C",
+          60: "#ADB3BC",
+          40: "#D1D5DB",
+          20: "#F0F3F6"
+        }
       }
     },
   },

@@ -28,7 +28,7 @@
         "src/assets/*"
       ],
       "@onboarding/*": [
-        "src/onboarding/*"
+        "src/screens/onboarding/*"
       ],
       "@app/*": [
         "src/app/*"
