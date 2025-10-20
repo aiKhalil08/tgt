@@ -15,6 +15,7 @@ import {
 import "./global.css"
 import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from '@/navigation/AppNavigator';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -22,9 +23,11 @@ function App() {
   return (
     <SafeAreaProvider>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} /> */}
-      <NavigationContainer>
-        <AppNavigator />
-      </NavigationContainer>
+      <GestureHandlerRootView>
+        <NavigationContainer>
+          <AppNavigator />
+        </NavigationContainer>
+      </GestureHandlerRootView>
     </SafeAreaProvider>
   );
 }

@@ -85,7 +85,7 @@ export default function ResetPassword({ navigation }: ResetPasswordScreenProps) 
                                 shadowRadius: 3.84,
                                 elevation: 5,
                             }}
-                            className='bg-white p-4 pt-14 rounded-[45px] gap-3 items-center justify-center'
+                            className='w-full bg-white p-4 pt-14 rounded-[45px] gap-3 items-center justify-center'
                         >
                             <SuccessSvg />
                             <CustomText className='text-center font-manrope-semibold font-semibold text-[16px]'>Password changed</CustomText>

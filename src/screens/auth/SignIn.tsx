@@ -26,6 +26,10 @@ export default function SignIn({ navigation }: SignInScreenProps) {
 
     const handleSignIn = () => {
         console.log(data);
+        navigation.getParent()?.reset({
+            index: 0,
+            routes: [{ name: "MainStack" }],
+        });
     }
 
     const handleGoogleSignIn = () => {

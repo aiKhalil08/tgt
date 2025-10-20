@@ -5,11 +5,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import Onboarding from '../screens/onboarding/Onboarding'
 import AuthStack from './AuthStack'
-
+import MainStack from './MainStack'
 
 export type AppStackParamList = {
     OnBoarding: undefined;
     AuthStack: undefined;
+    MainStack: undefined;
 }
 
 const AppStack = createNativeStackNavigator<AppStackParamList>()
@@ -52,6 +53,7 @@ export default function AppNavigator() {
                 )
             }
             <AppStack.Screen name="AuthStack" component={AuthStack} />
+            <AppStack.Screen name="MainStack" component={MainStack} />
         </AppStack.Navigator>
     )
 }

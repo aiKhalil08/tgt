@@ -25,7 +25,7 @@ export default function CustomTextInput({ label, error, LeftIcon, RightIcon, onR
             <View className='w-full h-[56px] rounded-[50px]'>
                 <TextInput
                     {...props}
-                    className={`w-full h-full rounded-[50px] py-4 px-6 text-black tracking-wide text-[13px] border ${LeftIcon ? 'pl-[58px]' : ''} ${RightIcon ? 'pr-[58px]' : ''} ${props.className} ${isFocused ? 'border-primary bg-primary/10' : 'border-[#F0F3F6] bg-[#F0F3F6]'}`}
+                    className={`w-full h-full rounded-[50px] py-4 px-6 text-black tracking-wide text-[13px] border ${LeftIcon ? 'pl-14' : ''} ${RightIcon ? 'pr-14' : ''} ${props.className} ${isFocused ? 'border-primary bg-primary/10' : 'border-[#F0F3F6] bg-[#F0F3F6]'}`}
                     placeholderTextColor='#ADB3BC'
                     autoFocus={false}
                     onFocus={() => setIsFocused(true)}
