@@ -1,16 +1,11 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {
   forwardRef,
   ForwardRefRenderFunction,
-  RefObject,
-  useEffect,
-  useRef,
-  useState,
 } from 'react';
 import RBSheet from 'react-native-raw-bottom-sheet';
 import AnnouncementList from './AnnouncementList';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import ScreenHeader from '@/components/layout/ScreenHeader';
 
 type AnnouncementRBSheetProps = {
   onClose: () => void;

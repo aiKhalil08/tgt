@@ -8,9 +8,10 @@ type PanelProps = {
     leftElement?: React.ReactNode,
     rightElement?: React.ReactNode,
     titleClassName?: string,
+    subTitleClassName?: string,
 } & PressableProps;
 
-export default function Panel({ title, subTitle, leftElement, rightElement=null, titleClassName="", ...props }: PanelProps) {
+export default function Panel({ title, subTitle, leftElement, rightElement=null, titleClassName="", subTitleClassName="", ...props }: PanelProps) {
 
     return (
         <Pressable
@@ -38,7 +39,7 @@ export default function Panel({ title, subTitle, leftElement, rightElement=null,
                         </CustomText>
                     {
                         subTitle &&
-                            <CustomText className='!font-jakarta-medium !text-gray-60 text-[14px]'>
+                            <CustomText className={`!font-jakarta-medium !text-gray-60 text-[14px] ${subTitleClassName}`}>
                                 {subTitle}
                             </CustomText>
                     }
