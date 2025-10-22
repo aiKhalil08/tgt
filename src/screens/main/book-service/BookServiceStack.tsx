@@ -12,6 +12,7 @@ import SelectDate from './screens/select-date/SelectDate';
 import BookingSummary from './screens/BookingSummary';
 import Receipt from './screens/Receipt';
 import ReceiptScreenHeader from './components/ReceiptScreenHeader';
+import Payment from './screens/payment/Payment';
 
 export type BookServiceStackParamList = {
     Catalogue: undefined;
@@ -19,6 +20,7 @@ export type BookServiceStackParamList = {
     SelectType: {categoryName: string};
     SelectDate: undefined;
     BookingSummary: undefined;
+    Payment: undefined;
     Receipt: undefined;
 }
 
@@ -74,6 +76,14 @@ export default function BookServiceStack() {
                     header: ScreenHeader,
                 }}
                 component={BookingSummary}
+            />
+            <BookServiceStackNavigator.Screen
+                name="Payment"
+                options={{
+                    title: "Secure Your Spot",
+                    header: ScreenHeader,
+                }}
+                component={Payment}
             />
             <BookServiceStackNavigator.Screen
                 name="Receipt"

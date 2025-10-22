@@ -17,7 +17,7 @@ export default function CustomTextInput({ label, error, LeftIcon, RightIcon, onR
     const isEmpty = props.value?.trim() === '';
 
     return (
-        <View className='gap-2 w-full'>
+        <View className='gap-2'>
             {/* {
                 label &&
                 <CustomText className='!text-gray-80 !font-jakarta-extrabold tracking-tighter text-sm'>{label}</CustomText>

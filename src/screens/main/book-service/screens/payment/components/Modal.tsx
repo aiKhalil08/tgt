@@ -1,17 +1,19 @@
-import { Modal, StyleSheet, View } from 'react-native'
+import { Modal, StyleSheet, Text, View, } from 'react-native'
+import React from 'react'
+import BlurView from '@/components/BlurView'
+import TargetSvg from '@/assets/icons/Target'
 import CustomText from '@/components/CustomText'
 import CustomButton from '@/components/CustomButton'
-import { useState } from 'react';
-import TargetSvg from '@/assets/icons/Target';
-import BlurView from '@/components/BlurView';
 
-export default function LocationPrompt({onEnable}: {onEnable: () => void}) {
-    const [visible, setVisible] = useState(false);
+type Props = {
+    visible: boolean;
+    onViewReceipt: () => void;
+    onGoHome: () => void;
+    onTryAgain: () => void;
+    onChangeMethod: () => void;
+}
 
-    const handleEnableLocation = () => {
-        setVisible(false);
-        onEnable();
-    }
+export default function PaymentStatusModal({visible, onViewReceipt, onGoHome, onTryAgain, onChangeMethod}: Props) {
 
     return (
         <Modal
@@ -44,8 +46,8 @@ export default function LocationPrompt({onEnable}: {onEnable: () => void}) {
                         <CustomText className='text-center font-manrope-bold font-bold text-[24px]'>Enable Your Location</CustomText>
                         <CustomText className='text-center font-nunito-sans-regular text-grey-80'>Please enable to use your location to show nearby branches on the map</CustomText>
                         <CustomButton
-                            title='Enable Location'
-                            onPress={handleEnableLocation}
+                            title='View Receipt'
+                            onPress={onViewReceipt}
                             className='w-full mt-4'
                         />
                     </View>

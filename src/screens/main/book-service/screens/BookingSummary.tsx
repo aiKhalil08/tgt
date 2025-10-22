@@ -14,7 +14,7 @@ export default function BookingSummary({route, navigation}: BookingSummaryProps)
     const [payNow, setPayNow] = useState(false);
 
     const handleProceed = () => {
-        navigation.navigate('Receipt')
+        navigation.navigate('Payment')
     }
 
     return (

@@ -8,8 +8,8 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { AuthStackParamList } from '@/navigation/AuthStack'
 import { SubTitle, Title } from './components/PageTitle'
 import PasswordInput from '@/components/forms/PasswordInput'
-import { BlurView } from '@react-native-community/blur'
 import SuccessSvg from '@/assets/icons/Success.svg'
+import BlurView from '@/components/BlurView'
 
 type ResetPasswordScreenProps = NativeStackScreenProps<AuthStackParamList, 'ResetPassword'>
 
