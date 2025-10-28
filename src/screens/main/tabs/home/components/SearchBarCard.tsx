@@ -1,8 +1,5 @@
 import { StyleSheet } from 'react-native'
 import React from 'react'
-import CustomTextInput from '@/components/forms/CustomTextInput'
-import SearchSvg from '@/assets/icons/Search'
-import FilterSvg from '@/assets/icons/Filter'
 import SearchBar from '@/components/forms/SearchBar'
 
 export default function SearchBarCard({
@@ -14,6 +11,7 @@ export default function SearchBarCard({
 }) {
     return (
         <SearchBar
+            placeholder="What would you like for your crown today?"
             searchTerm={searchTerm}
             onChange={onChange}
         />

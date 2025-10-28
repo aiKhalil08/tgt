@@ -10,9 +10,8 @@ import SelectType from './screens/SelectType';
 import SelectTypeScreenHeader from './components/SelectTypeScreenHeader';
 import SelectDate from './screens/select-date/SelectDate';
 import BookingSummary from './screens/BookingSummary';
-import Receipt from './screens/Receipt';
+import Receipt from '../receipt/Receipt';
 import ReceiptScreenHeader from './components/ReceiptScreenHeader';
-import Payment from './screens/payment/Payment';
 
 export type BookServiceStackParamList = {
     Catalogue: undefined;
@@ -20,8 +19,6 @@ export type BookServiceStackParamList = {
     SelectType: {categoryName: string};
     SelectDate: undefined;
     BookingSummary: undefined;
-    Payment: undefined;
-    Receipt: undefined;
 }
 
 const BookServiceStackNavigator = createNativeStackNavigator<BookServiceStackParamList>()
@@ -76,22 +73,6 @@ export default function BookServiceStack() {
                     header: ScreenHeader,
                 }}
                 component={BookingSummary}
-            />
-            <BookServiceStackNavigator.Screen
-                name="Payment"
-                options={{
-                    title: "Secure Your Spot",
-                    header: ScreenHeader,
-                }}
-                component={Payment}
-            />
-            <BookServiceStackNavigator.Screen
-                name="Receipt"
-                options={{
-                    title: "Receipt",
-                    header: ReceiptScreenHeader,
-                }}
-                component={Receipt}
             />
         </BookServiceStackNavigator.Navigator>
     )

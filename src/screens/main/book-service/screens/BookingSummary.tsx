@@ -14,7 +14,7 @@ export default function BookingSummary({route, navigation}: BookingSummaryProps)
     const [payNow, setPayNow] = useState(false);
 
     const handleProceed = () => {
-        navigation.navigate('Payment')
+        navigation.getParent()?.navigate('Payment', { type: "booking"})
     }
 
     return (

@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import CustomText from '@/components/CustomText'
 import { add, format } from 'date-fns'
 import CalendarSvg from '@/assets/icons/Calendar';
-import CalendarRBSheet from './Calendar';
+import CalendarRBSheet from '../../../../../../components/CalendarRBSheet';
 import { DateData } from 'react-native-calendars';
 
 export default function SelectDateCard({onSelect}: {onSelect: () => void}) {
@@ -68,7 +68,7 @@ export default function SelectDateCard({onSelect}: {onSelect: () => void}) {
             <CalendarRBSheet
                 selected={selectedDate}
                 onSelect={handleCalendarDateSelect}
-                onClose={() => setShowCalendar(false)}
+                minDate={new Date().toISOString()}
                 ref={calendarRef}
             />
         </View>

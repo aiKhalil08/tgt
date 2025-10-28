@@ -103,6 +103,7 @@ export default function Catalogue({navigation}: CatalogueScreenProps) {
     return (
         <View className='flex-1 p-4'>
             <SearchBar
+                placeholder="What would you like for your crown today?"
                 searchTerm={searchTerm}
                 onChange={setSearchTerm}
             />

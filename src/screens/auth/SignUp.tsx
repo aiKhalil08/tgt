@@ -45,7 +45,12 @@ export default function SignUp({ navigation }: SignUpScreenProps) {
 
     return (
         <ScreenView>
-            <ScrollView className='flex-1 px-4'>
+            <ScrollView
+                className='flex-1 px-4'
+                contentContainerStyle={{
+                    height: "100%",
+                }}
+            >
                 <View className='gap-4 mt-11'>
                     <Title>Join The Gentle Touch,</Title>
                     <SubTitle>Create your account to book services, track your hair journey, and enjoy exclusive care tips.</SubTitle>
@@ -94,7 +99,7 @@ export default function SignUp({ navigation }: SignUpScreenProps) {
                         notice
                     </CustomText>
                 </View>
-                <View className='mt-4 gap-4'>
+                <View className='mt-auto gap-4'>
                     <CustomButton
                         title='Join Now'
                         onPress={handleSignUp}

@@ -7,17 +7,21 @@ import FilterSvg from '@/assets/icons/Filter';
 export default function SearchBar({
     searchTerm,
     onChange,
+    placeholder="Search",
+    hideFilterIcon=false,
 }: {
     searchTerm: string;
     onChange: (value: string) => void;
+    placeholder?: string;
+    hideFilterIcon?: boolean;
 }) {
     return (
         <CustomTextInput
-            placeholder="What would you like for your crown today?"
+            placeholder={placeholder}
             value={searchTerm}
             onChangeText={onChange}
             LeftIcon={SearchSvg}
-            RightIcon={FilterSvg}
+            RightIcon={hideFilterIcon ? undefined : FilterSvg}
         />
     )
 }

@@ -45,7 +45,12 @@ export default function SignIn({ navigation }: SignInScreenProps) {
 
     return (
         <ScreenView>
-            <ScrollView className='flex-1 px-4'>
+            <ScrollView
+                className='flex-1 px-4'
+                contentContainerStyle={{
+                    height: "100%",
+                }}
+            >
                 <View className='gap-4 mt-11'>
                     <Title>Ready for some gentle care?</Title>
                     <SubTitle>Sign in to browse services and book your next appointment</SubTitle>
@@ -75,7 +80,7 @@ export default function SignIn({ navigation }: SignInScreenProps) {
                         </CustomText>
                     </Pressable>
                 </View>
-                <View className='mt-[108px] gap-4'>
+                <View className='mt-auto gap-4'>
                     <CustomButton
                         title='Sign In'
                         onPress={handleSignIn}
