@@ -1,27 +1,24 @@
 import { Platform, Pressable, StyleSheet, View } from 'react-native'
 import React, { useState } from 'react'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
-import ChevronLeftSvg from '@/assets/icons/ChevronLeft';
-import MoreVerticalSvg from '@/assets/icons/MoreVertical';
-import { Message } from '../ChatRoom';
+import { Content } from '../ChatRoom';
 import CustomTextInput from '@/components/forms/CustomTextInput';
 import AttachmentSvg from '@/assets/icons/Attachment';
 import SmileSvg from '@/assets/icons/Smile';
 import PaperPlaneSvg from '@/assets/icons/PaperPlane';
 
-export default function ChatRoomFooter({onSend}: {onSend: (message: Message) => void}) {
+export default function ChatRoomFooter({onSend}: {onSend: (content: Content) => void}) {
     const [text, setText] = useState('');
     const [file, setFile] = useState<string | null>(null);
 
     const handleSend = () => {
-        const message: Message = {text};
+        const content: Content = {text};
 
         if (file) {
-            message.file = file;
+            content.file = file;
         }
 
         setText('');
-        onSend(message);
+        onSend(content);
     };
 
     const handlePickFile = () => {
@@ -64,6 +61,7 @@ export default function ChatRoomFooter({onSend}: {onSend: (message: Message) => 
                 <View className='flex-1'>
                     <CustomTextInput
                         placeholder='Type a message'
+                        value={text}
                         onChangeText={setText}
                         className='!pl-4 !py-3 !font-nunito-sans-regular !text-[16px] !text-grey-80'
                         RightIcon={SmileSvg}

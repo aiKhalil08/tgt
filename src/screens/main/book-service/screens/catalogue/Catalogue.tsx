@@ -103,27 +103,27 @@ export default function Catalogue({navigation}: CatalogueScreenProps) {
     return (
         <View className='flex-1 p-4'>
             <SearchBar
-                placeholder="What would you like for your crown today?"
                 searchTerm={searchTerm}
                 onChange={setSearchTerm}
             />
             <ScrollView
                 className='mt-7'
                 showsVerticalScrollIndicator={false}
+                stickyHeaderIndices={[1]}
             >
-                <View className="rounded-[24px] h-[200px] overflow-hidden">
+                <View className="rounded-[24px] h-[200px] overflow-hidden mb-6">
                     <ImageBackground
                         source={require('@/assets/images/catalogue-header.png')}
-                        className='w-full h-[200px] '
+                        className='w-full h-[200px]'
                     />
                 </View>
-                <View className='mt-8'>
+                <View className='bg-white pb-4'>
                     <CategoriesSlider
                         selectedCategory={selectedCategory}
                         onSelectCategory={setSelectedCategory}
                     />
                 </View>
-                <View className='mt-8'>
+                <View className='mt-2'>
                     <Grid
                         items={
                             filteredServices

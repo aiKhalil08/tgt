@@ -1,11 +1,14 @@
-import { ImageBackground, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { BookServiceStackParamList } from '../BookServiceStack'
+import { BookServiceStackParamList } from '../../BookServiceStack'
 import CustomText from '@/components/CustomText'
 import ClockSvg from '@/assets/icons/Clock'
 import Panel from '@/components/Panel'
 import ChevronLeftSvg from '@/assets/icons/ChevronLeft'
+import PagerView from 'react-native-pager-view'
+import { PageIndicator } from 'react-native-page-indicator'
+import ServiceImages from './components/ServiceImages'
 
 type ServiceDetailsProps = NativeStackScreenProps<BookServiceStackParamList, 'ServiceDetails'>
 
@@ -29,15 +32,16 @@ export default function ServiceDetails({route, navigation}: ServiceDetailsProps)
         }
     ]
 
+    const images = [
+        service.previewImage,
+        require('@/assets/images/hairstyles/sew-in.png'),
+        require('@/assets/images/hairstyles/cornrows.png'),
+    ]
+
     return (
         <View className='flex-1 p-4'>
             <ScrollView>
-                <View className="rounded-[24px] h-[228px] overflow-hidden">
-                    <ImageBackground
-                        source={service.previewImage}
-                        className='w-full h-[228px] '
-                    />
-                </View>
+                <ServiceImages images={images} />
                 <View className='mt-6 gap-4'>
                     <CustomText className='!text-grey-100 !font-manrope-bold !font-bold !text-[24px]'>
                         {service.name}

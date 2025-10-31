@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MapView from './screens/MapView';
 import SearchLocation from './screens/SearchLocation';
 import ScreenHeader from '@/components/layout/ScreenHeader';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 export type LocationStackParamList = {
     MapView: undefined;
@@ -14,14 +13,11 @@ export type LocationStackParamList = {
 const LocationStackNavigator = createNativeStackNavigator<LocationStackParamList>()
 
 export default function LocationStack() {
-    const insets = useSafeAreaInsets();
-
     return (
         <LocationStackNavigator.Navigator
             screenOptions={{
                 header: ScreenHeader,
                 contentStyle: {
-                    paddingBottom: insets.bottom,
                     backgroundColor: "white"
                 }
             }}

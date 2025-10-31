@@ -1,9 +1,10 @@
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Pressable, ScrollView, StyleSheet } from 'react-native'
 import React from 'react'
 import BasingSvg from '@/assets/icons/Basin';
 import TreatmentSvg from '@/assets/icons/Treatment';
 import IconProps from '@/assets/icons/IconProps';
 import CustomText from '@/components/CustomText';
+import DetanglingSvg from '@/assets/icons/Detangling';
 
 export default function CategoriesSlider({
     selectedCategory,
@@ -12,6 +13,7 @@ export default function CategoriesSlider({
     selectedCategory: string;
     onSelectCategory: (category: string) => void;
 }) {
+
     const categories: { name: string; icon: React.FC<IconProps> }[] = [
         {
             name: 'Washes',
@@ -23,7 +25,7 @@ export default function CategoriesSlider({
         },
         {
             name: 'Detangling',
-            icon: TreatmentSvg,
+            icon: DetanglingSvg,
         },
     ];
 

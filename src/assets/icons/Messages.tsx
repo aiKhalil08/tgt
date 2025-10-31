@@ -2,11 +2,12 @@ import * as React from "react";
 import Svg, { G, Path, Circle, Defs, ClipPath, Rect } from "react-native-svg";
 import IconProps from "./IconProps";
 
-const MessagesSvg: React.FC<IconProps> = ({ 
+const MessagesSvg: React.FC<IconProps & { unread?: boolean }> = ({ 
   width, 
   height,
-  size = 20, 
+  size = 20,
   color = "#000", 
+  unread = false,
 }) => (
   <Svg width={width || size} height={height || size} viewBox="0 0 28 26" fill="none">
     <G clipPath="url(#clip0_1_1451)">
@@ -15,8 +16,14 @@ const MessagesSvg: React.FC<IconProps> = ({
         fill={color}
       />
     </G>
-    <Circle cx="21.375" cy="6" r="6" fill="white" />
-    <Circle cx="21.375" cy="6" r="4" fill="#F98600" />
+    {
+      unread && (
+        <>
+          <Circle cx="21.375" cy="6" r="6" fill="white" />
+          <Circle cx="21.375" cy="6" r="4" fill="#F98600" />
+        </>
+      )
+    }
     <Defs>
       <ClipPath id="clip0_1_1451">
         <Rect width="24" height="24" fill="white" transform="translate(0.375 2)" />

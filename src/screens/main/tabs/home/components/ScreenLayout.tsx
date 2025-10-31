@@ -16,7 +16,6 @@ export default function ScreenLayout({
 
     const scrollHandler = useAnimatedScrollHandler({
         onScroll: (event) => {
-            console.log(event.contentOffset.y)
             scrollY.value = event.contentOffset.y;
         },
     });

@@ -11,6 +11,7 @@ import CalendarSvg from '@/assets/icons/Calendar';
 import MessagesSvg from '@/assets/icons/Messages';
 import UserSvg from '@/assets/icons/User';
 import ScreenHeader from '@/components/layout/ScreenHeader';
+import MessagesTabButton from '@/components/layout/MessagesTabButton';
 
 export type MainTabsParamList = {
     Home: undefined;
@@ -59,7 +60,7 @@ export default function MainTabs() {
                 name="Messages"
                 component={Messages}
                 options={{
-                    tabBarIcon: ({color}) => <MessagesSvg color={color} />,
+                    tabBarIcon: ({color}) => <MessagesTabButton color={color} />,
                     headerShown: false,
                 }}
             />
